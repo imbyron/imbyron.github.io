@@ -282,6 +282,172 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2013/09/02/regex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Byron">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Google一下">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2013/09/02/regex/" itemprop="url">
+                  一些正则表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-09-02T15:54:04+08:00">
+                2013-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/爱折腾/" itemprop="url" rel="index">
+                    <span itemprop="name">爱折腾</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2013/09/02/regex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2013/09/02/regex/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>###一些入门匹配</p>
+<ol>
+<li>\b是正则表达式规定的一个特殊代码（好吧，某些人叫它元字符，metacharacter），代表着单词的开头或结尾，也就是单词的分界处。虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是\b并不匹配这些单词分隔字符中的任何一个，它只匹配一个位置。</li>
+<li>假如你要找的是hi后面不远处跟着一个Lucy，你应该用<code>\bhi\b.*\bLucy\b</code>。</li>
+<li><code>0\d\d-\d\d\d\d\d\d\d\d</code>匹配这样的字符串：以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字(也就是中国的电话号码。</li>
+<li>为了避免那么多烦人的重复，我们也可以这样写这个表达式：<code>0\d{2}-\d{8}</code>。这里\d后面的{2}({8})的意思是前面\d必须连续重复匹配2次(8次)。</li>
+<li>\s匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。</li>
+<li>\w匹配字母或数字或下划线或汉字等。</li>
+<li><code>\ba\w*\b</code>匹配以字母a开头的单词——先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w*)，最后是单词结束处(\b)。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/09/02/regex/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2013/08/19/excel-skills/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -919,168 +1085,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2013/07/26/jiang-hu-ren-cheng-shao-ma-ye/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Byron">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Google一下">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2013/07/26/jiang-hu-ren-cheng-shao-ma-ye/" itemprop="url">
-                  江湖人称少马爷【转】
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-26T23:58:34+08:00">
-                2013-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/认真生活/" itemprop="url" rel="index">
-                    <span itemprop="name">认真生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2013/07/26/jiang-hu-ren-cheng-shao-ma-ye/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2013/07/26/jiang-hu-ren-cheng-shao-ma-ye/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>少马爷，原名马志明，津门相声演员，今年61岁。（佳斌按：1945年生）年纪虽已不小，但因为有个已故相声大师马三立之子的身份，故被喜欢他的观众们尊称为“少马爷”。  </p>
-</blockquote>
-<p>　　本人自个儿掂量着，算不上个铁杆的相声爱好者。但既为京城人氏，耳濡目染，从小到大，相声段子却也听得不算少。知道马志明大约是在20年前，听了他的原创段子《纠纷》，惊异于一个人怎么能将分饰的两个角色学得如此惟妙惟肖。不过那时候俺还是屁孩儿，也就是听个热闹。大点以后，又陆续听了些传统段子，如《八扇屏》《文章会》《大保镖》等，便觉得当今的相声界，天津那一群远比北京的踏实、扎实，尤其是马志明的段子，那种不急不躁，诙谐中不失潇洒稳重的做派，实在少有人及，当得起一个“帅”字。相声演员讲“帅”“卖”“怪”“坏”，而因相声是谐趣艺术，演员们大多状貌奇异，因此“帅”字尤难，除了这位少马爷，在本人心目中也只有侯宝林先生了。后来上了网才知道，敢情马志明的FANS也是一群一群的，并不如原先想象的那般少有人知，便又有了些庙堂江湖之慨。  </p>
-<p>　　传说中，马志明的脾气是很梗直的。据说当年的《纠纷》参加相声大赛的时候，满堂喝彩弄得评委不知如何是好——盖因其他相声演员统统给评委们塞了红包，惟独咱们这位少马爷没有。按规矩不能给奖，但观众的反响却分明证明了这是个一等奖的节目，于是评委派代表跟马志明谈，说哪怕你只送一点意思意思，一等奖就是你的了。可咱少马爷回得也干脆——“哪怕我只送一分钱，这奖也是买来的。”于是该年度，《纠纷》仅名列第三。个中猫腻，实非俺等局外人所能揣测。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2013/07/26/jiang-hu-ren-cheng-shao-ma-ye/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1130,7 +1134,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">99</span>
+                <span class="site-state-item-count">100</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1152,7 +1156,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-count">96</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

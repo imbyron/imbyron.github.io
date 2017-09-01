@@ -1,0 +1,855 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ubuntu," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Google一下" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="以前都是用光驱或者Ｕ盘的形式安装，后来双虎同学非要拿自己的上网本跟我的换，现在用着这个上网本，又需要用linux环境，于是决定采取硬盘安装的形式。由于Ｄaisy需要用到XP，所以我的目的是分出一个盘来安装ubuntu，启动的时候，xp和ubuntu共存。 　　闲话少叙，步骤如下： 1.分区 　　需要单独腾出一个盘来安装ubuntu，转移所有文件并且到管理磁盘工具处将其删除。 2.下载Ubunt">
+<meta name="keywords" content="ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xp硬盘安装ubuntu12.10手记">
+<meta property="og:url" content="https://googleyixia.com/2012/12/16/notes-from-a-xp-hard-drive-installation-ubuntu12-10/index.html">
+<meta property="og:site_name" content="Google一下">
+<meta property="og:description" content="以前都是用光驱或者Ｕ盘的形式安装，后来双虎同学非要拿自己的上网本跟我的换，现在用着这个上网本，又需要用linux环境，于是决定采取硬盘安装的形式。由于Ｄaisy需要用到XP，所以我的目的是分出一个盘来安装ubuntu，启动的时候，xp和ubuntu共存。 　　闲话少叙，步骤如下： 1.分区 　　需要单独腾出一个盘来安装ubuntu，转移所有文件并且到管理磁盘工具处将其删除。 2.下载Ubunt">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2014-06-11T14:06:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xp硬盘安装ubuntu12.10手记">
+<meta name="twitter:description" content="以前都是用光驱或者Ｕ盘的形式安装，后来双虎同学非要拿自己的上网本跟我的换，现在用着这个上网本，又需要用linux环境，于是决定采取硬盘安装的形式。由于Ｄaisy需要用到XP，所以我的目的是分出一个盘来安装ubuntu，启动的时候，xp和ubuntu共存。 　　闲话少叙，步骤如下： 1.分区 　　需要单独腾出一个盘来安装ubuntu，转移所有文件并且到管理磁盘工具处将其删除。 2.下载Ubunt">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://googleyixia.com/2012/12/16/notes-from-a-xp-hard-drive-installation-ubuntu12-10/"/>
+
+
+
+
+
+  <title> xp硬盘安装ubuntu12.10手记 | Google一下 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '5353535-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Google一下</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">为了看看阳光，我来到这个世界上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soundcloud"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2012/12/16/notes-from-a-xp-hard-drive-installation-ubuntu12-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Byron">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Google一下">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                xp硬盘安装ubuntu12.10手记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2012-12-16T14:50:56+08:00">
+                2012-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/爱折腾/" itemprop="url" rel="index">
+                    <span itemprop="name">爱折腾</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2012/12/16/notes-from-a-xp-hard-drive-installation-ubuntu12-10/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2012/12/16/notes-from-a-xp-hard-drive-installation-ubuntu12-10/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>　　以前都是用光驱或者Ｕ盘的形式安装，后来双虎同学非要拿自己的上网本跟我的换，现在用着这个上网本，又需要用linux环境，于是决定采取硬盘安装的形式。由于Ｄaisy需要用到XP，所以我的目的是分出一个盘来安装ubuntu，启动的时候，xp和ubuntu共存。</p>
+<p>　　闲话少叙，步骤如下：</p>
+<p><strong>1.分区</strong></p>
+<p>　　需要单独腾出一个盘来安装ubuntu，转移所有文件并且到管理磁盘工具处将其删除。</p>
+<p><strong>2.下载Ubuntu镜像文件</strong></p>
+<p>　　到官方网站：<a href="http://www.ubuntu.org.cn" target="_blank" rel="external">http://www.ubuntu.org.cn</a>，下载你需要的版本。</p>
+<p>　　本次下载的是12.10-桌面版，下载到的文件为：ubuntu-12.10-desktop-i386.iso。</p>
+<p>　　并将此文件放到C盘根目录下。</p>
+<p><strong>3.解压与配置Ubuntu镜像文件</strong></p>
+<p>　　将ubuntu-12.10-desktop-i386.iso中.disk目录、casper目录下的initrd.lz和vmlinuz文件解压到C盘根目录下。<br><a id="more"></a><br><strong>4.下载GRUB4DOS</strong></p>
+<p>　　GRUB4DOS是一个优秀的多系统引导软件，它可以很方便的引导各种操作系统，比如DOS、Windows、 Linux等。</p>
+<p>　　本次所用的版本为：GRUB4DOS-0.4.4，下载到的文件为：grub4dos-0.4.4-2009-01-11.zip。</p>
+<p><strong>5.解压与配置GRUB4DOS</strong></p>
+<p>　　将grub4dos-0.4.4-2009-01-11.zip压缩包中的grldr和menu.lst两个文件解压到C盘根目录下, 然后修改menu.lst文件，在末尾添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title Install Ubuntu 12.10</div><div class="line">root (hd0,0)</div><div class="line">kernel (hd0,0)/vmlinuz boot=casper iso-scan/filename=/ubuntu-12.10-desktop-i386.iso ro quiet splash locale=zh_CN.UTF-8</div><div class="line">initrd (hd0,0)/initrd.lz</div></pre></td></tr></table></figure>
+<p><strong>6.修改boot.ini文件</strong></p>
+<p>　　编辑C:\boot.ini文件，在末尾添加：</p>
+<pre><code>C:\grldr=&quot;Setup Ubuntu 12.10&quot;
+</code></pre><p><strong>7.进入Ubuntu的liveCD模式</strong></p>
+<p>　　重新启动电脑，选择“Install Ubuntu 12.10”选项，进入Ubuntu的liveCD模式。</p>
+<p><strong>8.卸载/isodevice挂载点</strong></p>
+<p>　　通过硬盘安装Ubuntu，系统会自动挂载iso所在的分区，此处为C盘，在/isodevice目录下可以看到C盘的所有文件。</p>
+<p>　　如果直接安装Ubuntu，会有：不能卸载/isodevice挂载点的提示，导致安装失败。因此必须首先卸载/isodevice挂载点，在终端中输入：</p>
+<pre><code>sudo umount -l /isodevice
+</code></pre><p>　　此时，可以到/isodevice目录查看一下，如果目录为空，则卸载成功。</p>
+<p><strong>9.开始安装Ubuntu</strong></p>
+<p>　　运行桌面上的“安装 Ubuntu 12.10”，进入安装界面。</p>
+<p>　　一般都是直接点击“前进”按钮，当划分分区的时候，一定要选择“手动指定分区（高级）”。</p>
+<p><strong>10.手动指定分区</strong></p>
+<p>　　当出现“分配磁盘空间”的界面时，选择：“手动指定分区（高级）”，然后会看到整个硬盘的文件系统分配情况。</p>
+<p>　　列表中显示的“/dev/sda1”、“/dev/sda5”、“/dev/sda6”和“/dev/sda7”，分别代表Windows下的C、D、E、F盘4个分区。</p>
+<p>　　这时候，选择你刚才删除的那个磁盘，然后点击做下方的减号——删除磁盘将其变为空闲。</p>
+<p>　　选中列表中最后一项的“空闲”，点击“添加…”按钮，打开“创建分区”对话框。</p>
+<p>　　在“用于：”中选择“交换空间”，然后在“新建分区容量（MB）：”中输入：2000。（交换空间相当于Windows中的虚拟内存，本次定为2G）</p>
+<p>　　继续选择最后一项的“空闲”，点击“添加…”按钮，打开“创建分区”对话框。</p>
+<p>　　在“用于：”中选择“Ext4日志文件系统”，“新建分区容量（MB）：”中保留剩余的磁盘空间；然后在“挂载点：”中选择“/”。（/代表根分区，将剩余的磁盘空间都划为根分区）</p>
+<p>　　最后点击“现在安装”按钮，进行安装。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>赞赏作者半杯摩卡</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat.png" alt="Byron WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Byron Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2012/12/13/python-the-break-statement/" rel="next" title="Python的break语句">
+                <i class="fa fa-chevron-left"></i> Python的break语句
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/06/19/probe-into-the-wordpress-root-directory-files/" rel="prev" title="WordPress 根目录文件探究">
+                WordPress 根目录文件探究 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Byron" />
+          <p class="site-author-name" itemprop="name">Byron</p>
+           
+              <p class="site-description motion-element" itemprop="description">互联网、用户体验、用户思维、简洁、需求。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">99</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/imbyron" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://fanfou.com/sanqiuhaoyue" target="_blank" title="饭否">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  饭否
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.yseeker.com/" title="品味雅虎" target="_blank">品味雅虎</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xbeta.info/" title="善用佳软" target="_blank">善用佳软</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.auiou.com/" title="自由勇的Blog" target="_blank">自由勇的Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2008 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Byron</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://byronblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://googleyixia.com/2012/12/16/notes-from-a-xp-hard-drive-installation-ubuntu12-10/';
+          this.page.identifier = '2012/12/16/notes-from-a-xp-hard-drive-installation-ubuntu12-10/';
+          this.page.title = 'xp硬盘安装ubuntu12.10手记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://byronblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

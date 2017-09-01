@@ -1,0 +1,906 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,游戏,Tic Tac Toe," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Google一下" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="在这个教程中，我将展示如何利用Python来做一个井字游戏。这将包括函数、列表、if语句、while循环、for循环以及错误处理等等。  　　首先，我们将创建两个函数，第一个函数将会打印出井字游戏的背景模板： 1234567def print_board():    for i in range(0,3):        for j in range(0,3):            print">
+<meta name="keywords" content="python,游戏,Tic Tac Toe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用Python制作简单的井字游戏">
+<meta property="og:url" content="https://googleyixia.com/2013/07/22/tic-tac-toe-in-python/index.html">
+<meta property="og:site_name" content="Google一下">
+<meta property="og:description" content="在这个教程中，我将展示如何利用Python来做一个井字游戏。这将包括函数、列表、if语句、while循环、for循环以及错误处理等等。  　　首先，我们将创建两个函数，第一个函数将会打印出井字游戏的背景模板： 1234567def print_board():    for i in range(0,3):        for j in range(0,3):            print">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2014-06-11T14:06:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用Python制作简单的井字游戏">
+<meta name="twitter:description" content="在这个教程中，我将展示如何利用Python来做一个井字游戏。这将包括函数、列表、if语句、while循环、for循环以及错误处理等等。  　　首先，我们将创建两个函数，第一个函数将会打印出井字游戏的背景模板： 1234567def print_board():    for i in range(0,3):        for j in range(0,3):            print">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://googleyixia.com/2013/07/22/tic-tac-toe-in-python/"/>
+
+
+
+
+
+  <title> 利用Python制作简单的井字游戏 | Google一下 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '5353535-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Google一下</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">为了看看阳光，我来到这个世界上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soundcloud"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2013/07/22/tic-tac-toe-in-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Byron">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Google一下">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                利用Python制作简单的井字游戏
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-22T18:27:19+08:00">
+                2013-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/爱折腾/" itemprop="url" rel="index">
+                    <span itemprop="name">爱折腾</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2013/07/22/tic-tac-toe-in-python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2013/07/22/tic-tac-toe-in-python/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>在这个教程中，我将展示如何利用Python来做一个井字游戏。这将包括函数、列表、if语句、while循环、for循环以及错误处理等等。</p>
+</blockquote>
+<p>　　首先，我们将创建两个函数，第一个函数将会打印出井字游戏的背景模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def print_board():</div><div class="line">    for i in range(0,3):</div><div class="line">        for j in range(0,3):</div><div class="line">            print map[2-i][j],</div><div class="line">            if j != 2:</div><div class="line">                print &quot;|&quot;,</div><div class="line">        print &quot;&quot;</div></pre></td></tr></table></figure>
+<p>　　在这里，我们使用了两个for循环，要遍历一个名为<code>map</code>的列表变量。这个变量是一个二维列表，将保存每个位置的信息。</p>
+<p>　　由于我会按照小键盘的数字来进行对照位置（稍后你会看到），所以第一个值我们把它设为<code>（2-i）</code>，然后我们想用<code>&quot;|&quot;</code>来进行分割我们的位置，所以在每个位置打印完之后，我们给他打印一个<code>&quot;|&quot;</code>，我们在这里<code>print map[2-i][j],</code>使用了逗号，以保证他们在同一行被打印出来。</p>
+<p>　　现在，这个函数可以打印一个游戏的背景啦，它看起来是这个样子滴：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">|   |   </div><div class="line">|   |   </div><div class="line">|   |</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">X | X |   </div><div class="line">O | X | O </div><div class="line">  | O | X</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">X | X | X </div><div class="line">X | X | X </div><div class="line">X | X | X</div></pre></td></tr></table></figure>
+<p>　　接下来，我们创建一个<code>check_done()</code>函数，它会在每轮结束之后检查游戏是否结束了，如果游戏结束，那么返回True并打印一条消息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">def check_done():</div><div class="line">    for i in range(0,3):</div><div class="line">        if map[i][0] == map[i][1] == map[i][2] != &quot; &quot; \</div><div class="line">        or map[0][i] == map[1][i] == map[2][i] != &quot; &quot;:</div><div class="line">            print turn, &quot;won!!!&quot;</div><div class="line">            return True</div><div class="line">        </div><div class="line">    if map[0][0] == map[1][1] == map[2][2] != &quot; &quot; \</div><div class="line">    or map[0][2] == map[1][1] == map[2][0] != &quot; &quot;:</div><div class="line">        print turn, &quot;won!!!&quot;</div><div class="line">        return True</div><div class="line"></div><div class="line">    if &quot; &quot; not in map[0] and &quot; &quot; not in map[1] and &quot; &quot; not in map[2]:</div><div class="line">        print &quot;Draw&quot;</div><div class="line">        return True</div><div class="line">        </div><div class="line">    return False</div></pre></td></tr></table></figure>
+<p>　　首先，我们会检查水平和垂直方向，是不是有三格是相同、并且不为空（所以他不会认为连续三个空行是符合条件的），其次，我们以相同的方式来检查对角线。</p>
+<p>　　这8行如果有一行符合条件，那么游戏结束并且打印出“Won!!!”并返回<code>True</code>，同时注意<code>turn</code>这个变量，它的作用是判断现在下棋的是那一方，最终展现出来的消息将会是“X赢了！！”或“O赢了！！”。</p>
+<p>　　接下来这个函数会判断假如没有一个位置是空的，那么就意味着没有人能够赢得比赛（前面判断过了），那么就打印出平局，并且返回<code>True</code>。</p>
+<p>　　如果没有上述两种情况，那么游戏还没结束，返回<code>False</code>。</p>
+<p>　　OK，现在我们有了两个函数，接下来开始我们真正的程序，首先来创建三个变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">turn = &quot;X&quot;</div><div class="line">map = [[&quot; &quot;,&quot; &quot;,&quot; &quot;],</div><div class="line">       [&quot; &quot;,&quot; &quot;,&quot; &quot;],</div><div class="line">       [&quot; &quot;,&quot; &quot;,&quot; &quot;]]</div><div class="line">done = False</div></pre></td></tr></table></figure>
+<p>　　我已经告诉过你这三个变量是熟么意思了，假如你忘了的话，那么看看下面：</p>
+<ul>
+<li>turn：该谁走了</li>
+<li>map：游戏的背景地图</li>
+<li>done：这个游戏到底有木有结束</li>
+</ul>
+<p>　　接下来，这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">while done != True:</div><div class="line">    print_board()</div><div class="line">    </div><div class="line">    print turn, &quot;&apos;s turn&quot;</div><div class="line">    print</div><div class="line"></div><div class="line">    moved = False</div><div class="line">    while moved != True:</div></pre></td></tr></table></figure>
+<p>　　里面有一个while循环，直到done为True为止，我们打印出该轮到谁走了。</p>
+<p>　　然后创建一个名为<code>moved</code>的变量，检查玩家是不是移动了，如果没有移动，则进入下一个循环。</p>
+<p>　　接下来，我们打印玩家该怎样去下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print &quot;Please select position by typing in a number between 1 and 9, see below for which number that is which position...&quot;</div><div class="line">        print &quot;7|8|9&quot;</div><div class="line">        print &quot;4|5|6&quot;</div><div class="line">        print &quot;1|2|3&quot;</div><div class="line">        print</div></pre></td></tr></table></figure>
+<p>　　接下来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">try:</div><div class="line">            pos = input(&quot;Select: &quot;)</div><div class="line">            if pos &lt;=9 and pos &gt;=1:</div></pre></td></tr></table></figure>
+<p>　　我们希望玩家输入一个数字，然后我们检查是不是在1~9之间，同时，我们还得增加一个错误处理，比如玩家输入”Hello”，程序不能就这么退出了。</p>
+<p>　　现在，我们需要检查他走的这一步能不能走：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Y = pos/3</div><div class="line">                X = pos%3</div><div class="line">                if X != 0:</div><div class="line">                    X -=1</div><div class="line">                else:</div><div class="line">                     X = 2</div><div class="line">                     Y -=1</div></pre></td></tr></table></figure>
+<p>　　hah，睁大眼睛啦，首先我们得到一个X和Y的值，然后使用他们来检查，他要下的那个位置是不是空的，接下来我会向你解释X和Y他们是肿么工作的：</p>
+<ul>
+<li>位置1：Y = 1/3 = 0, X = 1%3 = 1; x -= 1 = 0</li>
+<li>位置2：Y = 2/3 = 0, X = 2%3 = 2; X -= 1 = 1</li>
+<li>位置3：Y = 3/3 = 1, X = 3%3 = 0; X = 2, Y -= 1 = 0</li>
+<li>……</li>
+</ul>
+<p>　　下面的自己算啊，我直接上结论（靠，Hexo默认的模板不显示表格啊，我在mou上面编辑的时候比下面的漂亮多了！）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Y\X</th>
+<th style="text-align:center">x=0</th>
+<th style="text-align:center">x=1</th>
+<th style="text-align:center">x=2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">y=2</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">9</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">y=1</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:center">y=0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>　　aha,这个位置和我们键入的是一样的！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">print &quot;7|8|9&quot;</div><div class="line">print &quot;4|5|6&quot;</div><div class="line">print &quot;1|2|3&quot;</div></pre></td></tr></table></figure>
+<p>　　现在我们完成大部分工作了，但是还有几行代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">if map[Y][X] == &quot; &quot;:</div><div class="line">    map[Y][X] = turn</div><div class="line">                    </div><div class="line">moved = True</div><div class="line">done = check_done()</div><div class="line"></div><div class="line">if done == False:</div><div class="line">if turn == &quot;X&quot;:</div><div class="line">    turn = &quot;O&quot;</div><div class="line">else:</div><div class="line">    turn = &quot;X&quot;</div><div class="line">            </div><div class="line">except:</div><div class="line">    print &quot;You need to add a numeric value&quot;</div></pre></td></tr></table></figure>
+<p>　　嗯，我们给moved变量复制为True，并检查是否结束了，木有结束的话变换角色换下一个人走。</p>
+<p>　　OK，差不多结束了，假如你只是想Ctrl+C and Ctrl+V的话，下面是全部的代码，希望你学到了点什么，( ^_^ )/~~拜拜。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line">def print_board():</div><div class="line">    for i in range(0,3):</div><div class="line">        for j in range(0,3):</div><div class="line">            print map[2-i][j],</div><div class="line">            if j != 2:</div><div class="line">                print &quot;|&quot;,</div><div class="line">        print &quot;&quot;</div><div class="line"></div><div class="line"></div><div class="line">def check_done():</div><div class="line">    for i in range(0,3):</div><div class="line">        if map[i][0] == map[i][1] == map[i][2] != &quot; &quot; \</div><div class="line">        or map[0][i] == map[1][i] == map[2][i] != &quot; &quot;:</div><div class="line">            print turn, &quot;won!!!&quot;</div><div class="line">            return True</div><div class="line">        </div><div class="line">    if map[0][0] == map[1][1] == map[2][2] != &quot; &quot; \</div><div class="line">    or map[0][2] == map[1][1] == map[2][0] != &quot; &quot;:</div><div class="line">        print turn, &quot;won!!!&quot;</div><div class="line">        return True</div><div class="line"></div><div class="line">    if &quot; &quot; not in map[0] and &quot; &quot; not in map[1] and &quot; &quot; not in map[2]:</div><div class="line">        print &quot;Draw&quot;</div><div class="line">        return True</div><div class="line">        </div><div class="line"></div><div class="line">    return False</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">turn = &quot;X&quot;</div><div class="line">map = [[&quot; &quot;,&quot; &quot;,&quot; &quot;],</div><div class="line">       [&quot; &quot;,&quot; &quot;,&quot; &quot;],</div><div class="line">       [&quot; &quot;,&quot; &quot;,&quot; &quot;]]</div><div class="line">done = False</div><div class="line"></div><div class="line"></div><div class="line">while done != True:</div><div class="line">    print_board()</div><div class="line">    </div><div class="line">    print turn, &quot;&apos;s turn&quot;</div><div class="line">    print</div><div class="line"></div><div class="line">    moved = False</div><div class="line">    while moved != True:</div><div class="line">        print &quot;Please select position by typing in a number between 1 and 9,\</div><div class="line">        see below for which number that is which position...&quot;</div><div class="line">        print &quot;7|8|9&quot;</div><div class="line">        print &quot;4|5|6&quot;</div><div class="line">        print &quot;1|2|3&quot;</div><div class="line">        print</div><div class="line"></div><div class="line">        try:</div><div class="line">            pos = input(&quot;Select: &quot;)</div><div class="line">            if pos &lt;=9 and pos &gt;=1:</div><div class="line">                Y = pos/3</div><div class="line">                X = pos%3</div><div class="line">                if X != 0:</div><div class="line">                    X -=1</div><div class="line">                else:</div><div class="line">                     X = 2</div><div class="line">                     Y -=1</div><div class="line">                    </div><div class="line">                if map[Y][X] == &quot; &quot;:</div><div class="line">                    map[Y][X] = turn</div><div class="line">                    moved = True</div><div class="line">                    done = check_done()</div><div class="line"></div><div class="line">                    if done == False:</div><div class="line">                        if turn == &quot;X&quot;:</div><div class="line">                            turn = &quot;O&quot;</div><div class="line">                        else:</div><div class="line">                            turn = &quot;X&quot;</div><div class="line">                </div><div class="line">            </div><div class="line">        except:</div><div class="line">            print &quot;You need to add a numeric value&quot;</div></pre></td></tr></table></figure>
+<p><a href="http://forum.codecall.net/topic/50892-tic-tac-toe-in-python/" target="_blank" rel="external">via</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>赞赏作者半杯摩卡</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat.png" alt="Byron WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Byron Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/游戏/" rel="tag"># 游戏</a>
+          
+            <a href="/tags/Tic-Tac-Toe/" rel="tag"># Tic Tac Toe</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/07/18/impression-paintings-by-python/" rel="next" title="用Python生成的印象画作品">
+                <i class="fa fa-chevron-left"></i> 用Python生成的印象画作品
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/" rel="prev" title="完成100个Python中的项目之——Text篇（1-4）">
+                完成100个Python中的项目之——Text篇（1-4） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Byron" />
+          <p class="site-author-name" itemprop="name">Byron</p>
+           
+              <p class="site-description motion-element" itemprop="description">互联网、用户体验、用户思维、简洁、需求。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">99</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/imbyron" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://fanfou.com/sanqiuhaoyue" target="_blank" title="饭否">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  饭否
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.yseeker.com/" title="品味雅虎" target="_blank">品味雅虎</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xbeta.info/" title="善用佳软" target="_blank">善用佳软</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.auiou.com/" title="自由勇的Blog" target="_blank">自由勇的Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2008 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Byron</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://byronblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://googleyixia.com/2013/07/22/tic-tac-toe-in-python/';
+          this.page.identifier = '2013/07/22/tic-tac-toe-in-python/';
+          this.page.title = '利用Python制作简单的井字游戏';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://byronblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

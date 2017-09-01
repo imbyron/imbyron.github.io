@@ -1,0 +1,850 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Google一下" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="###字符串翻转： 　　输入一个字符串，程序把字符串翻转并打印出来 1234567#coding:utf-8&amp;apos;&amp;apos;&amp;apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&amp;apos;&amp;apos;&amp;apos;string = raw_input(&amp;quot;What do u wanna say to me? &amp;gt;&amp;gt;&amp;gt;&amp;quo">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="完成100个Python中的项目之——Text篇（1-4）">
+<meta property="og:url" content="https://googleyixia.com/2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/index.html">
+<meta property="og:site_name" content="Google一下">
+<meta property="og:description" content="###字符串翻转： 　　输入一个字符串，程序把字符串翻转并打印出来 1234567#coding:utf-8&amp;apos;&amp;apos;&amp;apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&amp;apos;&amp;apos;&amp;apos;string = raw_input(&amp;quot;What do u wanna say to me? &amp;gt;&amp;gt;&amp;gt;&amp;quo">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2014-06-11T14:06:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="完成100个Python中的项目之——Text篇（1-4）">
+<meta name="twitter:description" content="###字符串翻转： 　　输入一个字符串，程序把字符串翻转并打印出来 1234567#coding:utf-8&amp;apos;&amp;apos;&amp;apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&amp;apos;&amp;apos;&amp;apos;string = raw_input(&amp;quot;What do u wanna say to me? &amp;gt;&amp;gt;&amp;gt;&amp;quo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://googleyixia.com/2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/"/>
+
+
+
+
+
+  <title> 完成100个Python中的项目之——Text篇（1-4） | Google一下 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '5353535-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Google一下</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">为了看看阳光，我来到这个世界上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soundcloud"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Byron">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Google一下">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                完成100个Python中的项目之——Text篇（1-4）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2013-07-23T20:53:36+08:00">
+                2013-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/爱折腾/" itemprop="url" rel="index">
+                    <span itemprop="name">爱折腾</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###字符串翻转：</p>
+<p>　　<strong>输入一个字符串，程序把字符串翻转并打印出来</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#coding:utf-8</div><div class="line">&apos;&apos;&apos;</div><div class="line">@author：Byron</div><div class="line">新浪微博：http://weibo.com/ziyuetk</div><div class="line">&apos;&apos;&apos;</div><div class="line">string = raw_input(&quot;What do u wanna say to me? &gt;&gt;&gt;&quot;)</div><div class="line">print &quot;You say %s, I say %s&quot; % (string, string[::-1])</div></pre></td></tr></table></figure>
+<p>　　这是采用切片的方法，设置步长为-1，也就是反过来排序。</p>
+<p>　　对于s[i:j]这种形式的切片，还可以为切片指定一个步进值，即s[i:j:stride]，这样生成的元素就是s[i]、s[i+stride]、s[i+stride*2]等，直到j为止（不包括j）。</p>
+<p>　　下面这些例子会把分片讲解的更透彻一些：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; s=&quot;abcdefg&quot;</div><div class="line">&gt;&gt;&gt; s[::2]</div><div class="line">&apos;aceg&apos;</div><div class="line">&gt;&gt;&gt; s[::-2]</div><div class="line">&apos;geca&apos;</div><div class="line">&gt;&gt;&gt; s[5::-1]</div><div class="line">&apos;fedcba&apos;</div><div class="line">&gt;&gt;&gt; s[5:0:-1]</div><div class="line">&apos;fedcb&apos;</div><div class="line">&gt;&gt;&gt; s[:5:1]</div><div class="line">&apos;abcde&apos;</div><div class="line">&gt;&gt;&gt; s[5::1]</div><div class="line">&apos;fg&apos;</div></pre></td></tr></table></figure></p>
+<p>###Pig Latin:</p>
+<p>　　是一种英语语言游戏，形式是在英语上加上一点规则使发音改变。据说是由在德国的英国战俘发明来瞒混德军守卫的。儿童黑话于1950年代和1960年代在英国利物浦达到颠峰，各种年纪和职业的人都有使用。儿童黑话多半被儿童用来瞒着大人秘密沟通，有时则只是说着好玩。虽然是起源于英语的游戏，但是规则适用很多其他语言。</p>
+<p>　　<strong>规则如下：</strong></p>
+<p>　　以子音开头的字，将子音移到字尾，再加上”ay”：</p>
+<ul>
+<li>beast → east-bay</li>
+<li>dough → ough-day</li>
+<li>happy → appy-hay</li>
+<li>star → ar-stay</li>
+<li>three → ee-thray</li>
+</ul>
+<p>　　元音开头的字就只在字尾加上”ay”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#coding:utf-8</div><div class="line">&apos;&apos;&apos;</div><div class="line">@author：Byron</div><div class="line">新浪微博：http://weibo.com/ziyuetk</div><div class="line">&apos;&apos;&apos;</div><div class="line">word = raw_input(&quot;What&apos;s your word?:&quot;)</div><div class="line">aeiou = &apos;aeiouAEIOU&apos;</div><div class="line">pig = &apos;ay&apos;</div><div class="line">first = word[0]</div><div class="line">if first in aeiou:</div><div class="line">    latin = word + pig</div><div class="line">else:</div><div class="line">    latin = word[1:] + first + pig</div><div class="line">print latin</div></pre></td></tr></table></figure>
+<p>　　这个很简单，检查首字母是否在<code>aeiou</code>里面，在的话，直接在后面加<code>ay</code>，不在的话，把首字母放在单词末尾，再加<code>ay</code>。</p>
+<p>　　当然，按照真正的规则来写，这个程序会变得很长，这里不作要求。</p>
+<p>###Count Vowels：</p>
+<p>　　输入一个字符串，将用户输入文本中的元音字母进行计数。为了增加复杂度，要求每个元音字母分开统计。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#coding:utf-8</div><div class="line">&apos;&apos;&apos;</div><div class="line">@author：Byron</div><div class="line">新浪微博：http://weibo.com/ziyuetk</div><div class="line">&apos;&apos;&apos;</div><div class="line"></div><div class="line">string = raw_input(&apos;Enter a string: &apos;).lower()</div><div class="line">vowels = [&apos;a&apos;, &apos;e&apos;, &apos;i&apos;, &apos;o&apos;, &apos;u&apos;]</div><div class="line">counts = dict(zip(vowels, [0, 0, 0, 0, 0]))</div><div class="line">for vowel in counts:</div><div class="line">    for char in string:</div><div class="line">        if vowel == char:</div><div class="line">            counts[vowel] += 1</div><div class="line">print counts</div></pre></td></tr></table></figure>
+<p>　　注意：在获取了用户输入之后，我们用<code>lower()</code>函数把它变为了小写。（Ps：当然，你也可以利用<code>upper()</code>把它全变为大写）</p>
+<p>　　由于题目要求每个元音字母分开统计，我们这里使用了zip以及dict函数，下面举个例子来说明zip和dict的具体用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</div><div class="line">&gt;&gt;&gt;b = [1, 2, 3]</div><div class="line">&gt;&gt;&gt;zip(a, b)</div><div class="line">[(&apos;a&apos;, 1), (&apos;b&apos;, 2), (&apos;c&apos;, 3)]</div><div class="line">&gt;&gt;&gt;c = dict(zip(a, b))</div><div class="line">&gt;&gt;&gt;c</div><div class="line">&#123;&apos;a&apos;: 1, &apos;c&apos;: 3, &apos;b&apos;: 2&#125;</div></pre></td></tr></table></figure>
+<p>　　看到了？zip可以把任意多个列表作为参数，列表按相同的索引组合成一个元素合并成一个新列表，新的列表长度以参数中最短的列表为准。</p>
+<p>###Check if Palindrome：</p>
+<p>　　检查用户输入的字符串是否是回文，就好像中文里的“上海自来水来自海上”、“山东落花生花落东山”一样，当然，这里要求的是检查英文字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#coding:utf-8</div><div class="line">&apos;&apos;&apos;</div><div class="line">@author：Byron</div><div class="line">新浪微博：http://weibo.com/ziyuetk</div><div class="line">&apos;&apos;&apos;</div><div class="line"></div><div class="line">string = raw_input(&apos;Enter a string:&apos;).lower()</div><div class="line">if string == string[::-1]:</div><div class="line">    print &apos;%s is a palindrome&apos; % string</div><div class="line">else:</div><div class="line">    print &apos;%s is not a palindrome&apos; % string</div></pre></td></tr></table></figure>
+<p>　　有了上面切片的讲解，这里实现起来so easy有木有？O(∩_∩)O哈哈~</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>赞赏作者半杯摩卡</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechat.png" alt="Byron WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Byron Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/07/22/tic-tac-toe-in-python/" rel="next" title="利用Python制作简单的井字游戏">
+                <i class="fa fa-chevron-left"></i> 利用Python制作简单的井字游戏
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/07/24/a-tool-for-search-weather-by-python/" rel="prev" title="一个用Python做的查询天气的工具">
+                一个用Python做的查询天气的工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Byron" />
+          <p class="site-author-name" itemprop="name">Byron</p>
+           
+              <p class="site-description motion-element" itemprop="description">互联网、用户体验、用户思维、简洁、需求。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">99</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/imbyron" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://fanfou.com/sanqiuhaoyue" target="_blank" title="饭否">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  饭否
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.yseeker.com/" title="品味雅虎" target="_blank">品味雅虎</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://xbeta.info/" title="善用佳软" target="_blank">善用佳软</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.auiou.com/" title="自由勇的Blog" target="_blank">自由勇的Blog</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2008 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Byron</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://byronblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://googleyixia.com/2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/';
+          this.page.identifier = '2013/07/23/Trying-to-complete-over-100-projects-in-various-categories-in-Python/';
+          this.page.title = '完成100个Python中的项目之——Text篇（1-4）';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://byronblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

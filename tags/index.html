@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -10,11 +10,23 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -68,7 +80,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="互联网,产品经理,用户体验,用户思维,简洁,需求" />
@@ -82,7 +94,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -108,9 +120,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -133,17 +147,7 @@
 
 
 
-  <title>
-  
-
-  
-    tags | Google一下
-  
-</title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <title>tags | Google一下</title>
   
 
 
@@ -162,18 +166,16 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,7 +222,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br />
             
@@ -230,7 +232,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-soundcloud"></i> <br />
             
@@ -240,7 +242,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -250,7 +252,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -278,7 +280,11 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
 	<h1 class="post-title" itemprop="name headline">tags</h1>
 
@@ -286,16 +292,28 @@
 
 </header>
 
-    
-    
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-            目前共计 97 个标签
-        </div>
-        <div class="tag-cloud-tags">
-          <a href="/tags/2013/" style="font-size: 12px; color: #ccc">2013</a> <a href="/tags/2014/" style="font-size: 12px; color: #ccc">2014</a> <a href="/tags/2016/" style="font-size: 12px; color: #ccc">2016</a> <a href="/tags/404/" style="font-size: 12px; color: #ccc">404</a> <a href="/tags/Adobe/" style="font-size: 12px; color: #ccc">Adobe</a> <a href="/tags/Alfred/" style="font-size: 12px; color: #ccc">Alfred</a> <a href="/tags/Apache/" style="font-size: 12px; color: #ccc">Apache</a> <a href="/tags/BSD/" style="font-size: 12px; color: #ccc">BSD</a> <a href="/tags/Byron/" style="font-size: 15px; color: #adadad">Byron</a> <a href="/tags/CSS/" style="font-size: 12px; color: #ccc">CSS</a> <a href="/tags/CentOS/" style="font-size: 12px; color: #ccc">CentOS</a> <a href="/tags/DDNS/" style="font-size: 12px; color: #ccc">DDNS</a> <a href="/tags/DNSPOD/" style="font-size: 12px; color: #ccc">DNSPOD</a> <a href="/tags/Daisy/" style="font-size: 15px; color: #adadad">Daisy</a> <a href="/tags/Debian/" style="font-size: 12px; color: #ccc">Debian</a> <a href="/tags/GPL/" style="font-size: 12px; color: #ccc">GPL</a> <a href="/tags/GTD/" style="font-size: 24px; color: #4f4f4f">GTD</a> <a href="/tags/Google/" style="font-size: 12px; color: #ccc">Google</a> <a href="/tags/Hexo/" style="font-size: 18px; color: #8e8e8e">Hexo</a> <a href="/tags/LGPL/" style="font-size: 12px; color: #ccc">LGPL</a> <a href="/tags/LNMP/" style="font-size: 18px; color: #8e8e8e">LNMP</a> <a href="/tags/Linux/" style="font-size: 18px; color: #8e8e8e">Linux</a> <a href="/tags/MIT/" style="font-size: 12px; color: #ccc">MIT</a> <a href="/tags/Mac/" style="font-size: 12px; color: #ccc">Mac</a> <a href="/tags/Mozilla/" style="font-size: 12px; color: #ccc">Mozilla</a> <a href="/tags/OmniFocus/" style="font-size: 12px; color: #ccc">OmniFocus</a> <a href="/tags/SSD/" style="font-size: 12px; color: #ccc">SSD</a> <a href="/tags/Themes/" style="font-size: 12px; color: #ccc">Themes</a> <a href="/tags/Tic-Tac-Toe/" style="font-size: 12px; color: #ccc">Tic Tac Toe</a> <a href="/tags/baby/" style="font-size: 12px; color: #ccc">baby</a> <a href="/tags/chrome/" style="font-size: 12px; color: #ccc">chrome</a> <a href="/tags/css/" style="font-size: 15px; color: #adadad">css</a> <a href="/tags/dad/" style="font-size: 12px; color: #ccc">dad</a> <a href="/tags/daisy/" style="font-size: 27px; color: #303030">daisy</a> <a href="/tags/disqus/" style="font-size: 12px; color: #ccc">disqus</a> <a href="/tags/dropbox/" style="font-size: 12px; color: #ccc">dropbox</a> <a href="/tags/excel/" style="font-size: 12px; color: #ccc">excel</a> <a href="/tags/gitcafe/" style="font-size: 12px; color: #ccc">gitcafe</a> <a href="/tags/github/" style="font-size: 15px; color: #adadad">github</a> <a href="/tags/goagent/" style="font-size: 15px; color: #adadad">goagent</a> <a href="/tags/hexo/" style="font-size: 21px; color: #6f6f6f">hexo</a> <a href="/tags/iMac/" style="font-size: 12px; color: #ccc">iMac</a> <a href="/tags/ibus/" style="font-size: 12px; color: #ccc">ibus</a> <a href="/tags/iptables/" style="font-size: 12px; color: #ccc">iptables</a> <a href="/tags/linode/" style="font-size: 15px; color: #adadad">linode</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/mac/" style="font-size: 15px; color: #adadad">mac</a> <a href="/tags/motion/" style="font-size: 12px; color: #ccc">motion</a> <a href="/tags/nitrous-io/" style="font-size: 12px; color: #ccc">nitrous.io</a> <a href="/tags/python/" style="font-size: 30px; color: #111">python</a> <a href="/tags/theme/" style="font-size: 15px; color: #adadad">theme</a> <a href="/tags/typecho/" style="font-size: 12px; color: #ccc">typecho</a> <a href="/tags/ubuntu/" style="font-size: 21px; color: #6f6f6f">ubuntu</a> <a href="/tags/wordpress/" style="font-size: 18px; color: #8e8e8e">wordpress</a> <a href="/tags/中文乱码/" style="font-size: 12px; color: #ccc">中文乱码</a> <a href="/tags/中文环境/" style="font-size: 12px; color: #ccc">中文环境</a> <a href="/tags/产品/" style="font-size: 21px; color: #6f6f6f">产品</a> <a href="/tags/冬至/" style="font-size: 12px; color: #ccc">冬至</a> <a href="/tags/圣诞/" style="font-size: 12px; color: #ccc">圣诞</a> <a href="/tags/地球日/" style="font-size: 12px; color: #ccc">地球日</a> <a href="/tags/多说/" style="font-size: 12px; color: #ccc">多说</a> <a href="/tags/夜景/" style="font-size: 12px; color: #ccc">夜景</a> <a href="/tags/奥运/" style="font-size: 12px; color: #ccc">奥运</a> <a href="/tags/妈妈/" style="font-size: 12px; color: #ccc">妈妈</a> <a href="/tags/安静/" style="font-size: 12px; color: #ccc">安静</a> <a href="/tags/宜昌/" style="font-size: 12px; color: #ccc">宜昌</a> <a href="/tags/平安夜/" style="font-size: 12px; color: #ccc">平安夜</a> <a href="/tags/幸福/" style="font-size: 27px; color: #303030">幸福</a> <a href="/tags/思维导图/" style="font-size: 12px; color: #ccc">思维导图</a> <a href="/tags/摄像头/" style="font-size: 12px; color: #ccc">摄像头</a> <a href="/tags/摄影/" style="font-size: 21px; color: #6f6f6f">摄影</a> <a href="/tags/杭州/" style="font-size: 12px; color: #ccc">杭州</a> <a href="/tags/模板/" style="font-size: 15px; color: #adadad">模板</a> <a href="/tags/正则/" style="font-size: 12px; color: #ccc">正则</a> <a href="/tags/求婚/" style="font-size: 15px; color: #adadad">求婚</a> <a href="/tags/汶川地震/" style="font-size: 12px; color: #ccc">汶川地震</a> <a href="/tags/游戏/" style="font-size: 12px; color: #ccc">游戏</a> <a href="/tags/爬虫/" style="font-size: 12px; color: #ccc">爬虫</a> <a href="/tags/独处/" style="font-size: 15px; color: #adadad">独处</a> <a href="/tags/生活/" style="font-size: 12px; color: #ccc">生活</a> <a href="/tags/用户体验/" style="font-size: 12px; color: #ccc">用户体验</a> <a href="/tags/监控/" style="font-size: 12px; color: #ccc">监控</a> <a href="/tags/相声/" style="font-size: 12px; color: #ccc">相声</a> <a href="/tags/结婚照/" style="font-size: 15px; color: #adadad">结婚照</a> <a href="/tags/职业测试/" style="font-size: 12px; color: #ccc">职业测试</a> <a href="/tags/节目/" style="font-size: 12px; color: #ccc">节目</a> <a href="/tags/英文路径/" style="font-size: 12px; color: #ccc">英文路径</a> <a href="/tags/英语/" style="font-size: 12px; color: #ccc">英语</a> <a href="/tags/设计师/" style="font-size: 12px; color: #ccc">设计师</a> <a href="/tags/调色板/" style="font-size: 12px; color: #ccc">调色板</a> <a href="/tags/逻辑错误/" style="font-size: 12px; color: #ccc">逻辑错误</a> <a href="/tags/阅读/" style="font-size: 18px; color: #8e8e8e">阅读</a> <a href="/tags/防火墙/" style="font-size: 12px; color: #ccc">防火墙</a> <a href="/tags/随想/" style="font-size: 12px; color: #ccc">随想</a> <a href="/tags/魔术/" style="font-size: 12px; color: #ccc">魔术</a> <a href="/tags/黑苹果/" style="font-size: 12px; color: #ccc">黑苹果</a> <a href="/tags/鼠标/" style="font-size: 18px; color: #8e8e8e">鼠标</a>
-        </div>
+      
+      
+      
+      <div class="post-body han-init-context">
+        
+        
+          <div class="tag-cloud">
+            <div class="tag-cloud-title">
+                目前共计 97 个标签
+            </div>
+            <div class="tag-cloud-tags">
+              <a href="/tags/2013/" style="font-size: 12px; color: #ccc">2013</a> <a href="/tags/2014/" style="font-size: 12px; color: #ccc">2014</a> <a href="/tags/2016/" style="font-size: 12px; color: #ccc">2016</a> <a href="/tags/404/" style="font-size: 12px; color: #ccc">404</a> <a href="/tags/Adobe/" style="font-size: 12px; color: #ccc">Adobe</a> <a href="/tags/Alfred/" style="font-size: 12px; color: #ccc">Alfred</a> <a href="/tags/Apache/" style="font-size: 12px; color: #ccc">Apache</a> <a href="/tags/BSD/" style="font-size: 12px; color: #ccc">BSD</a> <a href="/tags/Byron/" style="font-size: 15px; color: #adadad">Byron</a> <a href="/tags/CSS/" style="font-size: 12px; color: #ccc">CSS</a> <a href="/tags/CentOS/" style="font-size: 12px; color: #ccc">CentOS</a> <a href="/tags/DDNS/" style="font-size: 12px; color: #ccc">DDNS</a> <a href="/tags/DNSPOD/" style="font-size: 12px; color: #ccc">DNSPOD</a> <a href="/tags/Daisy/" style="font-size: 15px; color: #adadad">Daisy</a> <a href="/tags/Debian/" style="font-size: 12px; color: #ccc">Debian</a> <a href="/tags/GPL/" style="font-size: 12px; color: #ccc">GPL</a> <a href="/tags/GTD/" style="font-size: 24px; color: #4f4f4f">GTD</a> <a href="/tags/Google/" style="font-size: 12px; color: #ccc">Google</a> <a href="/tags/Hexo/" style="font-size: 18px; color: #8e8e8e">Hexo</a> <a href="/tags/LGPL/" style="font-size: 12px; color: #ccc">LGPL</a> <a href="/tags/LNMP/" style="font-size: 18px; color: #8e8e8e">LNMP</a> <a href="/tags/Linux/" style="font-size: 18px; color: #8e8e8e">Linux</a> <a href="/tags/MIT/" style="font-size: 12px; color: #ccc">MIT</a> <a href="/tags/Mac/" style="font-size: 12px; color: #ccc">Mac</a> <a href="/tags/Mozilla/" style="font-size: 12px; color: #ccc">Mozilla</a> <a href="/tags/OmniFocus/" style="font-size: 12px; color: #ccc">OmniFocus</a> <a href="/tags/SSD/" style="font-size: 12px; color: #ccc">SSD</a> <a href="/tags/Themes/" style="font-size: 12px; color: #ccc">Themes</a> <a href="/tags/Tic-Tac-Toe/" style="font-size: 12px; color: #ccc">Tic Tac Toe</a> <a href="/tags/baby/" style="font-size: 12px; color: #ccc">baby</a> <a href="/tags/chrome/" style="font-size: 12px; color: #ccc">chrome</a> <a href="/tags/css/" style="font-size: 15px; color: #adadad">css</a> <a href="/tags/dad/" style="font-size: 12px; color: #ccc">dad</a> <a href="/tags/daisy/" style="font-size: 27px; color: #303030">daisy</a> <a href="/tags/disqus/" style="font-size: 12px; color: #ccc">disqus</a> <a href="/tags/dropbox/" style="font-size: 12px; color: #ccc">dropbox</a> <a href="/tags/excel/" style="font-size: 12px; color: #ccc">excel</a> <a href="/tags/gitcafe/" style="font-size: 12px; color: #ccc">gitcafe</a> <a href="/tags/github/" style="font-size: 15px; color: #adadad">github</a> <a href="/tags/goagent/" style="font-size: 15px; color: #adadad">goagent</a> <a href="/tags/hexo/" style="font-size: 21px; color: #6f6f6f">hexo</a> <a href="/tags/iMac/" style="font-size: 12px; color: #ccc">iMac</a> <a href="/tags/ibus/" style="font-size: 12px; color: #ccc">ibus</a> <a href="/tags/iptables/" style="font-size: 12px; color: #ccc">iptables</a> <a href="/tags/linode/" style="font-size: 15px; color: #adadad">linode</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/mac/" style="font-size: 15px; color: #adadad">mac</a> <a href="/tags/motion/" style="font-size: 12px; color: #ccc">motion</a> <a href="/tags/nitrous-io/" style="font-size: 12px; color: #ccc">nitrous.io</a> <a href="/tags/python/" style="font-size: 30px; color: #111">python</a> <a href="/tags/theme/" style="font-size: 15px; color: #adadad">theme</a> <a href="/tags/typecho/" style="font-size: 12px; color: #ccc">typecho</a> <a href="/tags/ubuntu/" style="font-size: 21px; color: #6f6f6f">ubuntu</a> <a href="/tags/wordpress/" style="font-size: 18px; color: #8e8e8e">wordpress</a> <a href="/tags/中文乱码/" style="font-size: 12px; color: #ccc">中文乱码</a> <a href="/tags/中文环境/" style="font-size: 12px; color: #ccc">中文环境</a> <a href="/tags/产品/" style="font-size: 21px; color: #6f6f6f">产品</a> <a href="/tags/冬至/" style="font-size: 12px; color: #ccc">冬至</a> <a href="/tags/圣诞/" style="font-size: 12px; color: #ccc">圣诞</a> <a href="/tags/地球日/" style="font-size: 12px; color: #ccc">地球日</a> <a href="/tags/多说/" style="font-size: 12px; color: #ccc">多说</a> <a href="/tags/夜景/" style="font-size: 12px; color: #ccc">夜景</a> <a href="/tags/奥运/" style="font-size: 12px; color: #ccc">奥运</a> <a href="/tags/妈妈/" style="font-size: 12px; color: #ccc">妈妈</a> <a href="/tags/安静/" style="font-size: 12px; color: #ccc">安静</a> <a href="/tags/宜昌/" style="font-size: 12px; color: #ccc">宜昌</a> <a href="/tags/平安夜/" style="font-size: 12px; color: #ccc">平安夜</a> <a href="/tags/幸福/" style="font-size: 27px; color: #303030">幸福</a> <a href="/tags/思维导图/" style="font-size: 12px; color: #ccc">思维导图</a> <a href="/tags/摄像头/" style="font-size: 12px; color: #ccc">摄像头</a> <a href="/tags/摄影/" style="font-size: 21px; color: #6f6f6f">摄影</a> <a href="/tags/杭州/" style="font-size: 12px; color: #ccc">杭州</a> <a href="/tags/模板/" style="font-size: 15px; color: #adadad">模板</a> <a href="/tags/正则/" style="font-size: 12px; color: #ccc">正则</a> <a href="/tags/求婚/" style="font-size: 15px; color: #adadad">求婚</a> <a href="/tags/汶川地震/" style="font-size: 12px; color: #ccc">汶川地震</a> <a href="/tags/游戏/" style="font-size: 12px; color: #ccc">游戏</a> <a href="/tags/爬虫/" style="font-size: 12px; color: #ccc">爬虫</a> <a href="/tags/独处/" style="font-size: 15px; color: #adadad">独处</a> <a href="/tags/生活/" style="font-size: 12px; color: #ccc">生活</a> <a href="/tags/用户体验/" style="font-size: 12px; color: #ccc">用户体验</a> <a href="/tags/监控/" style="font-size: 12px; color: #ccc">监控</a> <a href="/tags/相声/" style="font-size: 12px; color: #ccc">相声</a> <a href="/tags/结婚照/" style="font-size: 15px; color: #adadad">结婚照</a> <a href="/tags/职业测试/" style="font-size: 12px; color: #ccc">职业测试</a> <a href="/tags/节目/" style="font-size: 12px; color: #ccc">节目</a> <a href="/tags/英文路径/" style="font-size: 12px; color: #ccc">英文路径</a> <a href="/tags/英语/" style="font-size: 12px; color: #ccc">英语</a> <a href="/tags/设计师/" style="font-size: 12px; color: #ccc">设计师</a> <a href="/tags/调色板/" style="font-size: 12px; color: #ccc">调色板</a> <a href="/tags/逻辑错误/" style="font-size: 12px; color: #ccc">逻辑错误</a> <a href="/tags/阅读/" style="font-size: 18px; color: #8e8e8e">阅读</a> <a href="/tags/防火墙/" style="font-size: 12px; color: #ccc">防火墙</a> <a href="/tags/随想/" style="font-size: 12px; color: #ccc">随想</a> <a href="/tags/魔术/" style="font-size: 12px; color: #ccc">魔术</a> <a href="/tags/黑苹果/" style="font-size: 12px; color: #ccc">黑苹果</a> <a href="/tags/鼠标/" style="font-size: 18px; color: #8e8e8e">鼠标</a>
+            </div>
+          </div>
+        
       </div>
+      
+      
+      
+    </div>
+    
+    
     
   </div>
 
@@ -319,6 +337,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -327,19 +346,22 @@
 
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="Byron" />
-          <p class="site-author-name" itemprop="name">Byron</p>
-           
-              <p class="site-description motion-element" itemprop="description">互联网、用户体验、用户思维、简洁、需求。</p>
           
+            <img class="site-author-image" itemprop="image"
+              src="/uploads/avatar.jpg"
+              alt="Byron" />
+          
+            <p class="site-author-name" itemprop="name">Byron</p>
+            <p class="site-description motion-element" itemprop="description">互联网、用户体验、用户思维、简洁、需求。</p>
         </div>
+
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives">
+            
+              <a href="/archives/">
+            
                 <span class="site-state-item-count">101</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -385,19 +407,19 @@
               <span class="links-of-author-item">
                 <a href="https://github.com/imbyron" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://fanfou.com/sanqiuhaoyue" target="_blank" title="饭否">
                   
-                    <i class="fa fa-fw fa-facebook"></i>
+                    <i class="fa fa-fw fa-facebook"></i>饭否</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/imbyron" target="_blank" title="Twitter">
                   
-                  饭否
-                </a>
+                    <i class="fa fa-fw fa-twitter"></i>Twitter</a>
               </span>
             
           
@@ -452,28 +474,31 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2008 - 
+  &copy;  2008 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-apple"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Byron</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -511,6 +536,12 @@
 
 
 
+
+
+
+
+
+
   
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
@@ -533,34 +564,30 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
 
   
 
-    
-      <script id="dsq-count-scr" src="https://byronblog.disqus.com/count.js" async></script>
-    
+  
 
-    
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
 
   
 
@@ -585,10 +612,6 @@
 
 
 
-  
-
-
-
 
 
 
@@ -601,8 +624,30 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
 
   
 

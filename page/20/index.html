@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
@@ -10,11 +10,23 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -68,7 +80,7 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="互联网,产品经理,用户体验,用户思维,简洁,需求" />
@@ -82,7 +94,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -107,9 +119,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -132,11 +146,7 @@
 
 
 
-  <title> Google一下 </title>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+  <title>Google一下</title>
   
 
 
@@ -155,11 +165,9 @@
 
 
 
+</head>
 
-
-
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -167,8 +175,7 @@
   
 
   <div class="container sidebar-position-left 
-   page-home 
- ">
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -215,7 +222,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-quote-left"></i> <br />
             
@@ -225,7 +232,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-soundcloud"></i> <br />
             
@@ -235,7 +242,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -245,7 +252,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -281,7 +288,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2008/11/16/finally-i-got-the-ibm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,16 +311,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2008/11/16/finally-i-got-the-ibm/" itemprop="url">
-                  用上了小黑
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2008/11/16/finally-i-got-the-ibm/" itemprop="url">用上了小黑</a></h1>
         
 
         <div class="post-meta">
@@ -357,17 +360,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2008/11/16/finally-i-got-the-ibm/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2008/11/16/finally-i-got-the-ibm/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -383,8 +375,10 @@
       </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -398,18 +392,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -423,6 +414,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -435,7 +430,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2008/06/28/think-i-am-waiting-for-someone/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -454,16 +453,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2008/06/28/think-i-am-waiting-for-someone/" itemprop="url">
-                  我想，我是在等一个人
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2008/06/28/think-i-am-waiting-for-someone/" itemprop="url">我想，我是在等一个人</a></h1>
         
 
         <div class="post-meta">
@@ -511,17 +502,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2008/06/28/think-i-am-waiting-for-someone/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2008/06/28/think-i-am-waiting-for-someone/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -537,8 +517,10 @@
       </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -563,18 +545,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -588,6 +567,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -600,7 +583,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2008/06/09/15-days-after-the-wenchuan-earthquake/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -619,16 +606,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2008/06/09/15-days-after-the-wenchuan-earthquake/" itemprop="url">
-                  写在离512半个多月后
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2008/06/09/15-days-after-the-wenchuan-earthquake/" itemprop="url">写在离512半个多月后</a></h1>
         
 
         <div class="post-meta">
@@ -676,17 +655,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2008/06/09/15-days-after-the-wenchuan-earthquake/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2008/06/09/15-days-after-the-wenchuan-earthquake/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -702,8 +670,10 @@
       </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -719,18 +689,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -744,6 +711,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -756,7 +727,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2008/05/02/the-olympic-torch-relay-timetable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -775,16 +750,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2008/05/02/the-olympic-torch-relay-timetable/" itemprop="url">
-                  奥运火炬传递时间表
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2008/05/02/the-olympic-torch-relay-timetable/" itemprop="url">奥运火炬传递时间表</a></h1>
         
 
         <div class="post-meta">
@@ -832,17 +799,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2008/05/02/the-olympic-torch-relay-timetable/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2008/05/02/the-olympic-torch-relay-timetable/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -858,8 +814,10 @@
       </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -875,18 +833,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -900,6 +855,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -912,7 +871,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://googleyixia.com/2008/04/26/who-is-your-audience/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -931,16 +894,8 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-            
-            
-              
                 
-                <a class="post-title-link" href="/2008/04/26/who-is-your-audience/" itemprop="url">
-                  节目，是做给听众的
-                </a>
-              
-            
-          </h1>
+                <a class="post-title-link" href="/2008/04/26/who-is-your-audience/" itemprop="url">节目，是做给听众的</a></h1>
         
 
         <div class="post-meta">
@@ -988,17 +943,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2008/04/26/who-is-your-audience/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2008/04/26/who-is-your-audience/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1014,8 +958,10 @@
       </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
@@ -1041,18 +987,15 @@
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -1066,6 +1009,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -1098,6 +1045,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -1106,19 +1054,22 @@
 
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar.jpg"
-               alt="Byron" />
-          <p class="site-author-name" itemprop="name">Byron</p>
-           
-              <p class="site-description motion-element" itemprop="description">互联网、用户体验、用户思维、简洁、需求。</p>
           
+            <img class="site-author-image" itemprop="image"
+              src="/uploads/avatar.jpg"
+              alt="Byron" />
+          
+            <p class="site-author-name" itemprop="name">Byron</p>
+            <p class="site-description motion-element" itemprop="description">互联网、用户体验、用户思维、简洁、需求。</p>
         </div>
+
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/archives">
+            
+              <a href="/archives/">
+            
                 <span class="site-state-item-count">101</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -1164,19 +1115,19 @@
               <span class="links-of-author-item">
                 <a href="https://github.com/imbyron" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
+                    <i class="fa fa-fw fa-github"></i>GitHub</a>
               </span>
             
               <span class="links-of-author-item">
                 <a href="http://fanfou.com/sanqiuhaoyue" target="_blank" title="饭否">
                   
-                    <i class="fa fa-fw fa-facebook"></i>
+                    <i class="fa fa-fw fa-facebook"></i>饭否</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/imbyron" target="_blank" title="Twitter">
                   
-                  饭否
-                </a>
+                    <i class="fa fa-fw fa-twitter"></i>Twitter</a>
               </span>
             
           
@@ -1231,28 +1182,31 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy;  2008 - 
+  &copy;  2008 &mdash; 
   <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-apple"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Byron</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -1290,6 +1244,12 @@
 
 
 
+
+
+
+
+
+
   
   <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
@@ -1312,34 +1272,30 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
 
   
 
-    
-      <script id="dsq-count-scr" src="https://byronblog.disqus.com/count.js" async></script>
-    
+  
 
-    
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
 
   
 
@@ -1364,10 +1320,6 @@
 
 
 
-  
-
-
-
 
 
 
@@ -1380,8 +1332,30 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.2"></script>
+
 
   
 

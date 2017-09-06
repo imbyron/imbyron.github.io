@@ -101,18 +101,18 @@
 
 
 
-<meta name="description" content="###Count Words in a String: 　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。 1234567891011#coding:utf-8&amp;apos;&amp;apos;&amp;apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&amp;apos;&amp;apos;&amp;apos;f = open(&amp;quot;input.txt">
+<meta name="description" content="Count Words in a String:　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。 1234567891011#coding:utf-8&apos;&apos;&apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&apos;&apos;&apos;f = open(&quot;input.txt&quot;).read()txt = f.split()count = 0for i">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="完成100个Python中的项目之——Text篇（5-8）">
 <meta property="og:url" content="https://googleyixia.com/2013/07/24/Trying-to-complete-over-100-projects-in-Python-2/index.html">
 <meta property="og:site_name" content="Google一下">
-<meta property="og:description" content="###Count Words in a String: 　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。 1234567891011#coding:utf-8&amp;apos;&amp;apos;&amp;apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&amp;apos;&amp;apos;&amp;apos;f = open(&amp;quot;input.txt">
+<meta property="og:description" content="Count Words in a String:　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。 1234567891011#coding:utf-8&apos;&apos;&apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&apos;&apos;&apos;f = open(&quot;input.txt&quot;).read()txt = f.split()count = 0for i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2014-06-11T14:06:58.000Z">
+<meta property="og:updated_time" content="2017-09-06T14:21:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="完成100个Python中的项目之——Text篇（5-8）">
-<meta name="twitter:description" content="###Count Words in a String: 　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。 1234567891011#coding:utf-8&amp;apos;&amp;apos;&amp;apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&amp;apos;&amp;apos;&amp;apos;f = open(&amp;quot;input.txt">
+<meta name="twitter:description" content="Count Words in a String:　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。 1234567891011#coding:utf-8&apos;&apos;&apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&apos;&apos;&apos;f = open(&quot;input.txt&quot;).read()txt = f.split()count = 0for i">
 
 
 
@@ -394,9 +394,8 @@
       
 
       
-        <p>###Count Words in a String:</p>
-<p>　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#coding:utf-8</div><div class="line">&apos;&apos;&apos;</div><div class="line">@author：Byron</div><div class="line">新浪微博：http://weibo.com/ziyuetk</div><div class="line">&apos;&apos;&apos;</div><div class="line">f = open(&quot;input.txt&quot;).read()</div><div class="line">txt = f.split()</div><div class="line">count = 0</div><div class="line">for i in txt:</div><div class="line">    count += 1</div><div class="line">print count</div></pre></td></tr></table></figure>
+        <h3 id="Count-Words-in-a-String"><a href="#Count-Words-in-a-String" class="headerlink" title="Count Words in a String:"></a>Count Words in a String:</h3><p>　　计算在一个字符串中有多少个单词，照旧，为了增加难度你必须要从一个文件里读取字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">@author：Byron</span></div><div class="line"><span class="string">新浪微博：http://weibo.com/ziyuetk</span></div><div class="line"><span class="string">'''</span></div><div class="line">f = open(<span class="string">"input.txt"</span>).read()</div><div class="line">txt = f.split()</div><div class="line">count = <span class="number">0</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> txt:</div><div class="line">    count += <span class="number">1</span></div><div class="line"><span class="keyword">print</span> count</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -526,8 +525,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -641,6 +649,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Count-Words-in-a-String"><span class="nav-number">1.</span> <span class="nav-text">Count Words in a String:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

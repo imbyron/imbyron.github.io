@@ -568,7 +568,7 @@
 
       
         
-          <p>###欢迎来到这个安静的地方。<br><a href="http://gtd.im/the-quiet-place/" target="_blank" rel="external">点击这里进入在线体验</a></p>
+          <h3 id="欢迎来到这个安静的地方。"><a href="#欢迎来到这个安静的地方。" class="headerlink" title="欢迎来到这个安静的地方。"></a>欢迎来到这个安静的地方。</h3><p><a href="http://gtd.im/the-quiet-place/" target="_blank" rel="external">点击这里进入在线体验</a></p>
 <hr>
 <ul>
 <li>在这安静的地方，没有领导和上级(没有他们冲你的大呼小叫)</li>
@@ -914,8 +914,7 @@
         
           
             <p>接上篇，用上Nitrous.io之后，只要在本地编辑好<code>.md</code>的博文，上传后随时随地运行<code>hexo generate --deploy</code>即可畅快的发文，可是，不同电脑之间的同步也是一个要去解决的问题，否则在一个没有安装hexo的机子上用Nitrous发表后，文章无法同不到Linux到机器上也是一个问题，于是想到了用github来管理blog。</p>
-<p>###推送你的blog文件夹到github</p>
-<ol>
+<h3 id="推送你的blog文件夹到github"><a href="#推送你的blog文件夹到github" class="headerlink" title="推送你的blog文件夹到github"></a>推送你的blog文件夹到github</h3><ol>
 <li>在github建立repositories，名字为命名为<code>blog</code>（你用hexo init的文件夹名）</li>
 <li>在本地进入<code>blog</code>文件夹，<code>git init</code>建立仓库</li>
 <li>建立<code>.gitignore</code>文件，里面填写<code>public/</code>（由于public每次generate都会更新，故此忽略pulic文件夹的git管理）</li>
@@ -925,8 +924,7 @@
 <li>把本机仓库的内容推送到github仓库：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:michaelliao/learngit.git</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>###如何用github来管理hexo的source</p>
-<ol>
+<h3 id="如何用github来管理hexo的source"><a href="#如何用github来管理hexo的source" class="headerlink" title="如何用github来管理hexo的source"></a>如何用github来管理hexo的source</h3><ol>
 <li>写博客后，<code>git add &lt;file&gt;</code>添加到代码库</li>
 <li>提交当前修改作为一个记录：<code>git commit -m 修改了&lt;修改的文件&gt;，原因是：……</code>。</li>
 <li>更新代码：<code>git push</code></li>
@@ -1086,7 +1084,7 @@
         
           
             <p>自从用上hexo以后，腰不疼了，腿也不酸了，走起路来呢，也有劲儿了。<br>但是在win下配置Node.js总是有些地方出错，作者也说会有些问题，后来虽然问题解决了，win下配置无压力了，但是总是不能做到随时随地上传。</p>
-<p>###Nitrous.io来了<br>前些日子突发奇想，既然这个在云端的IDE这么好用，那么看看是不是可以用来装一个hexo？<br>说做就做，用Node.js为环境重开了一个box，进去后果然可以配置成功，接下来把本地的blog文件夹打包传上去，一切都是那么美好。</p>
+<h3 id="Nitrous-io来了"><a href="#Nitrous-io来了" class="headerlink" title="Nitrous.io来了"></a>Nitrous.io来了</h3><p>前些日子突发奇想，既然这个在云端的IDE这么好用，那么看看是不是可以用来装一个hexo？<br>说做就做，用Node.js为环境重开了一个box，进去后果然可以配置成功，接下来把本地的blog文件夹打包传上去，一切都是那么美好。</p>
 <p>接下来我就可以随时随地在本地用编辑器写blog，传到Nitrous.io上面只需<code>hexo generate --deploy</code>就可以啦。</p>
 <p>Ps：这篇文章就是在本地编辑，云端deploy的哦。</p>
 

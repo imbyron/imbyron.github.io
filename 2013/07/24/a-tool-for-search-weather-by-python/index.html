@@ -101,15 +101,18 @@
 
 
 
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435#!/usr/bin/python#coding:utf-8&apos;&apos;&apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&apos;&apos;&apos;import urllib2, jsonfrom city import cityyourcity = raw_input">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一个用Python做的查询天气的工具">
 <meta property="og:url" content="https://googleyixia.com/2013/07/24/a-tool-for-search-weather-by-python/index.html">
 <meta property="og:site_name" content="Google一下">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435#!/usr/bin/python#coding:utf-8&apos;&apos;&apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&apos;&apos;&apos;import urllib2, jsonfrom city import cityyourcity = raw_input">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2014-06-11T14:06:58.000Z">
+<meta property="og:updated_time" content="2017-09-06T14:20:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个用Python做的查询天气的工具">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435#!/usr/bin/python#coding:utf-8&apos;&apos;&apos;@author：Byron新浪微博：http://weibo.com/ziyuetk&apos;&apos;&apos;import urllib2, jsonfrom city import cityyourcity = raw_input">
 
 
 
@@ -391,7 +394,7 @@
       
 
       
-        <script src="//gist.github.com/6055795.js?file=weather.py"></script>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/python</span></div><div class="line"><span class="comment">#coding:utf-8</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="string">@author：Byron</span></div><div class="line"><span class="string">新浪微博：http://weibo.com/ziyuetk</span></div><div class="line"><span class="string">'''</span></div><div class="line"><span class="keyword">import</span> urllib2, json</div><div class="line"><span class="keyword">from</span> city <span class="keyword">import</span> city</div><div class="line"></div><div class="line">yourcity = raw_input(<span class="string">"你想查那个城市的天气？"</span>)</div><div class="line"></div><div class="line"><span class="comment">#测试yourcity变量是否可以返回你想要的值</span></div><div class="line"><span class="comment">#print yourcity</span></div><div class="line"></div><div class="line">url = <span class="string">"http://www.weather.com.cn/data/cityinfo/"</span> + city[yourcity] + <span class="string">".html"</span></div><div class="line"></div><div class="line"><span class="comment">#print url #同上</span></div><div class="line"></div><div class="line">response = urllib2.urlopen(url, timeout=<span class="number">10</span>)</div><div class="line">city_dict = response.read()</div><div class="line"></div><div class="line"><span class="comment">#此处打印出来是一个json格式的东西</span></div><div class="line"><span class="comment">#print city_dict</span></div><div class="line"></div><div class="line"><span class="comment">#用Python的json库来解析获取到的网页json内容</span></div><div class="line">jsondata = json.JSONDecoder().decode(city_dict)</div><div class="line"></div><div class="line"><span class="comment">#定义几个变量用来储存解析出来的内容</span></div><div class="line">temp_low = jsondata[<span class="string">'weatherinfo'</span>][<span class="string">'temp1'</span>]</div><div class="line">temp_high = jsondata[<span class="string">'weatherinfo'</span>][<span class="string">'temp2'</span>]</div><div class="line">weather = jsondata[<span class="string">'weatherinfo'</span>][<span class="string">'weather'</span>]</div><div class="line"></div><div class="line"><span class="keyword">print</span> yourcity</div><div class="line"><span class="keyword">print</span> weather</div><div class="line"><span class="keyword">print</span> temp_low + <span class="string">"~"</span> + temp_high</div></pre></td></tr></table></figure>
       
     </div>
     
